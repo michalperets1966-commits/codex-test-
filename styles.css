@@ -1,0 +1,1192 @@
+ (cd "$(git rev-parse --show-toplevel)" && printf '%s' 'diff --git a/styles.css b/styles.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..3fc43b50ea1718af7ee6ddbec0449abed3270be4
+--- /dev/null
++++ b/styles.css
+@@ -0,0 +1,1185 @@
++:root {
++  --ink: #20352f;
++  --forest: #24483e;
++  --cream: #f6f2e9;
++  --paper: #fffdf8;
++  --sage: #8da092;
++  --sage-light: #dce3dc;
++  --clay: #cc765e;
++  --sand: #e9ddce;
++  --line: #d9d8d0;
++  --muted: #69766f
++}
++* {
++  box-sizing: border-box
++}
++html {
++  scroll-behavior: smooth
++}
++body {
++  margin: 0;
++  color: var(--ink);
++  background: var(--cream);
++  font-family: "DM Sans", sans-serif;
++  -webkit-font-smoothing: antialiased
++}
++a {
++  color: inherit;
++  text-decoration: none
++}
++.announcement {
++  height: 34px;
++  display: flex;
++  align-items: center;
++  justify-content: center;
++  gap: 14px;
++  color: #e9eee9;
++  background: var(--forest);
++  font-size: 10px;
++  font-weight: 700;
++  letter-spacing: 1.5px;
++  text-transform: uppercase
++}
++.announcement span {
++  width: 3px;
++  height: 3px;
++  border-radius: 50%;
++  background: #e0aa98
++}
++.site-header {
++  height: 82px;
++  max-width: 1320px;
++  margin: auto;
++  padding: 0 40px;
++  display: flex;
++  align-items: center;
++  justify-content: space-between
++}
++.brand {
++  display: flex;
++  align-items: center;
++  gap: 11px;
++  font-family: "Manrope", sans-serif;
++  font-size: 12px;
++  font-weight: 700;
++  letter-spacing: 2.2px
++}
++.brand-mark {
++  width: 29px;
++  height: 29px;
++  border: 1px solid var(--ink);
++  border-radius: 50%;
++  display: grid;
++  place-items: center;
++  font-family: Georgia, serif;
++  font-size: 13px;
++  font-style: italic;
++  letter-spacing: 0
++}
++.site-header nav {
++  display: flex;
++  gap: 35px;
++  color: #53635c;
++  font-size: 12px;
++  font-weight: 600
++}
++.site-header nav a:hover {
++  color: var(--clay)
++}
++.header-cta {
++  padding: 12px 18px;
++  color: white;
++  background: var(--ink);
++  font-size: 11px;
++  font-weight: 700
++}
++.header-cta span {
++  margin-left: 12px
++}
++.section-shell {
++  max-width: 1320px;
++  margin: auto;
++  padding-left: 40px;
++  padding-right: 40px
++}
++.hero {
++  min-height: 705px;
++  display: grid;
++  grid-template-columns: .9fr 1.1fr;
++  align-items: center;
++  gap: 55px;
++  padding-top: 55px;
++  padding-bottom: 85px
++}
++.hero-copy {
++  position: relative;
++  z-index: 2;
++  max-width: 570px
++}
++.eyebrow {
++  display: flex;
++  align-items: center;
++  gap: 10px;
++  margin: 0 0 20px;
++  color: var(--clay);
++  font-size: 10px;
++  font-weight: 700;
++  letter-spacing: 2px;
++  text-transform: uppercase
++}
++.eyebrow > span {
++  width: 25px;
++  height: 1px;
++  background: currentColor
++}
++h1, h2 {
++  margin: 0;
++  font-family: "Manrope", sans-serif;
++  font-weight: 600;
++  letter-spacing: -.055em;
++  line-height: 1.05
++}
++h1 {
++  font-size: clamp(50px, 5vw, 72px)
++}
++h1 em, h2 em {
++  color: var(--clay);
++  font-family: Georgia, serif;
++  font-weight: 400
++}
++.hero-description {
++  max-width: 515px;
++  margin: 26px 0;
++  color: var(--muted);
++  font-size: 16px;
++  line-height: 1.75
++}
++.hero-actions {
++  display: flex;
++  align-items: center;
++  gap: 23px;
++  margin-top: 31px
++}
++.button {
++  display: inline-flex;
++  align-items: center;
++  justify-content: space-between;
++  gap: 34px;
++  padding: 18px 23px;
++  font-size: 12px;
++  font-weight: 700;
++  transition: .2s
++}
++.button:hover {
++  transform: translateY(-2px)
++}
++.button-primary {
++  min-width: 210px;
++  color: #fff;
++  background: var(--clay);
++  box-shadow: 0 14px 30px rgba(146, 76, 56, .18)
++}
++.button-primary:hover {
++  background: #b9644e
++}
++.button span {
++  font-size: 18px
++}
++.price {
++  display: flex;
++  flex-direction: column
++}
++.price strong {
++  font-family: "Manrope";
++  font-size: 22px
++}
++.price span {
++  color: #89918d;
++  font-size: 9px
++}
++.hero-checks {
++  display: flex;
++  gap: 22px;
++  margin: 29px 0 0;
++  padding: 22px 0 0;
++  border-top: 1px solid var(--line);
++  list-style: none;
++  color: #65716b;
++  font-size: 10px;
++  font-weight: 600
++}
++.hero-checks span {
++  margin-right: 5px;
++  color: var(--clay)
++}
++.hero-visual {
++  height: 555px;
++  position: relative;
++  background: var(--sage-light);
++  overflow: hidden
++}
++.hero-visual:before {
++  content: "";
++  position: absolute;
++  width: 320px;
++  height: 320px;
++  right: -100px;
++  top: -120px;
++  border: 1px solid rgba(36, 72, 62, .12);
++  border-radius: 50%
++}
++.visual-caption {
++  position: absolute;
++  left: 30px;
++  top: 28px;
++  display: flex;
++  flex-direction: column
++}
++.visual-caption span {
++  font-size: 8px;
++  letter-spacing: 2px
++}
++.visual-caption strong {
++  font-family: Georgia, serif;
++  font-size: 18px;
++  font-style: italic;
++  font-weight: 400
++}
++.mockup-shadow {
++  position: absolute;
++  width: 440px;
++  height: 80px;
++  left: 50%;
++  bottom: 25px;
++  transform: translateX(-50%);
++  border-radius: 50%;
++  background: rgba(37, 55, 47, .16);
++  filter: blur(20px)
++}
++.book {
++  position: absolute;
++  width: 270px;
++  height: 385px;
++  padding: 27px;
++  box-shadow: 0 24px 45px rgba(38, 54, 47, .22)
++}
++.book-back {
++  left: 11%;
++  top: 105px;
++  transform: rotate(-8deg);
++  color: #e9eee9;
++  background: var(--forest)
++}
++.book-back.book-label {
++  font-size: 7px;
++  letter-spacing: 2px
++}
++.book-back div {
++  margin-top: 110px
++}
++.book-back div small, .book-back div strong {
++  display: block;
++  font-family: Georgia, serif;
++  font-size: 19px;
++  font-style: italic;
++  font-weight: 400
++}
++.book-back div strong {
++  font-size: 34px
++}
++.book-back p {
++  width: 130px;
++  margin-top: 18px;
++  color: #b7c4bc;
++  font-size: 8px;
++  line-height: 1.6
++}
++.book-front {
++  right: 10%;
++  top: 65px;
++  z-index: 2;
++  transform: rotate(5deg);
++  background: #f9f2e7
++}
++.book-front header {
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  font-size: 6px;
++  letter-spacing: 1.2px
++}
++.book-front header i {
++  width: 25px;
++  height: 25px;
++  border: 1px solid #68766e;
++  border-radius: 50%;
++  display: grid;
++  place-items: center;
++  font-family: Georgia;
++  font-size: 7px
++}
++.cover-title {
++  margin-top: 55px;
++  text-align: center
++}
++.cover-title small, .cover-title span {
++  display: block;
++  font-size: 6px;
++  letter-spacing: 2px
++}
++.cover-title strong {
++  display: block;
++  margin: 10px 0 18px;
++  font-family: Georgia, serif;
++  font-size: 31px;
++  font-style: italic;
++  font-weight: 400;
++  line-height: 1
++}
++.cover-art {
++  height: 95px;
++  margin: 33px-27px-27px;
++  position: relative;
++  overflow: hidden;
++  background: #c88a6e
++}
++.cover-art:before {
++  content: "";
++  position: absolute;
++  width: 170px;
++  height: 90px;
++  right: -30px;
++  bottom: -40px;
++  border-radius: 50%;
++  background: #63786b
++}
++.cover-art i {
++  position: absolute;
++  width: 2px;
++  height: 62px;
++  left: 62px;
++  bottom: -5px;
++  background: #304c41;
++  transform: rotate(-20deg)
++}
++.cover-art i:nth-child(2) {
++  left: 86px;
++  height: 78px;
++  transform: rotate(15deg)
++}
++.cover-art i:nth-child(3) {
++  left: 110px;
++  height: 52px;
++  transform: rotate(-7deg)
++}
++.floating-card {
++  position: absolute;
++  z-index: 4;
++  display: flex;
++  align-items: center;
++  gap: 11px;
++  padding: 12px 15px;
++  background: var(--paper);
++  box-shadow: 0 10px 28px rgba(38, 54, 47, .14)
++}
++.floating-card > b {
++  font-family: Manrope;
++  font-size: 22px
++}
++.floating-card > span: not(.canva-dot) {
++  display: flex;
++  flex-direction: column
++}
++.floating-card strong {
++  font-size: 9px;
++  color: var(--clay);
++  letter-spacing: 1px
++}
++.floating-card small {
++  color: #68756f;
++  font-size: 8px
++}
++.rating-card {
++  left: 27px;
++  bottom: 34px
++}
++.edit-card {
++  right: 22px;
++  top: 38px
++}
++.canva-dot {
++  width: 28px;
++  height: 28px;
++  border-radius: 50%;
++  display: grid;
++  place-items: center;
++  color: #fff;
++  background: #7d8e85;
++  font-family: Georgia;
++  font-style: italic
++}
++.edit-card strong {
++  color: var(--ink);
++  letter-spacing: 0
++}
++.trust-strip {
++  display: grid;
++  grid-template-columns: repeat(4, 1fr);
++  padding: 29px max(40px, calc((100vw-1240px) / 2));
++  color: #fff;
++  background: var(--forest)
++}
++.trust-strip > div {
++  display: flex;
++  align-items: center;
++  justify-content: center;
++  gap: 14px;
++  border-right: 1px solid rgba(255, 255, 255, .15)
++}
++.trust-strip > div:last-child {
++  border: 0
++}
++.trust-strip > div > span {
++  color: #e3a891;
++  font-family: Georgia;
++  font-size: 22px
++}
++.trust-strip p {
++  display: flex;
++  flex-direction: column;
++  margin: 0
++}
++.trust-strip strong {
++  font-size: 11px
++}
++.trust-strip small {
++  margin-top: 3px;
++  color: #adbbb5;
++  font-size: 8px
++}
++.benefits {
++  padding: 125px max(40px, calc((100vw-1240px) / 2));
++  background: var(--paper)
++}
++.section-heading {
++  display: flex;
++  align-items: end;
++  justify-content: space-between;
++  gap: 50px
++}
++.section-heading h2, .included h2, .faq h2, .final-cta h2 {
++  font-size: clamp(40px, 4.2vw, 58px)
++}
++.section-heading > p {
++  max-width: 390px;
++  margin: 0 0 5px;
++  color: var(--muted);
++  font-size: 14px;
++  line-height: 1.7
++}
++.benefit-grid {
++  display: grid;
++  grid-template-columns: repeat(3, 1fr);
++  gap: 18px;
++  margin-top: 65px
++}
++.benefit-grid article {
++  min-height: 290px;
++  padding: 30px;
++  position: relative;
++  border: 1px solid var(--line);
++  background: #faf8f2
++}
++.benefit-grid article.featured {
++  color: #fff;
++  border-color: var(--forest);
++  background: var(--forest);
++  transform: translateY(-14px)
++}
++.step {
++  position: absolute;
++  right: 25px;
++  top: 25px;
++  color: #a0aaa5;
++  font-size: 9px
++}
++.benefit-icon {
++  width: 48px;
++  height: 48px;
++  margin-bottom: 52px;
++  border-radius: 50%;
++  display: grid;
++  place-items: center;
++  color: var(--clay);
++  background: #f0e5d8;
++  font-family: Georgia;
++  font-size: 23px
++}
++.featured .benefit-icon {
++  background: rgba(255, 255, 255, .12)
++}
++.benefit-grid h3 {
++  margin: 0 0 12px;
++  font-family: Manrope;
++  font-size: 18px
++}
++.benefit-grid p {
++  max-width: 300px;
++  margin: 0;
++  color: #748079;
++  font-size: 12px;
++  line-height: 1.75
++}
++.featured p {
++  color: #bbc6c0
++}
++.included {
++  max-width: 1240px;
++  margin: auto;
++  padding: 135px 0;
++  display: grid;
++  grid-template-columns: 1.08fr .92fr;
++  align-items: center;
++  gap: 95px
++}
++.pages-preview {
++  height: 565px;
++  position: relative;
++  background: #dedbd0;
++  overflow: hidden
++}
++.pages-preview:after {
++  content: "";
++  position: absolute;
++  inset: auto-100px-180px;
++  width: 420px;
++  height: 320px;
++  border: 1px solid rgba(32, 53, 47, .14);
++  border-radius: 50%
++}
++.sample-page {
++  position: absolute;
++  width: 235px;
++  height: 340px;
++  padding: 22px;
++  background: var(--paper);
++  box-shadow: 0 18px 38px rgba(41, 56, 50, .18)
++}
++.sample-page h3 {
++  font-family: Georgia, serif;
++  font-size: 25px;
++  font-style: italic;
++  font-weight: 400
++}
++.sample-page small {
++  font-size: 6px;
++  letter-spacing: 1.3px
++}
++.page-left {
++  left: 28px;
++  top: 145px;
++  transform: rotate(-9deg);
++  background: #f6ecdf
++}
++.page-left h3 {
++  margin-top: 50px
++}
++.line-list {
++  margin-top: 40px
++}
++.line-list span {
++  display: block;
++  width: 100%;
++  height: 1px;
++  margin: 20px 0;
++  background: #d8d2c6
++}
++.page-main {
++  left: 31%;
++  top: 72px;
++  z-index: 2;
++  transform: rotate(2deg)
++}
++.page-main header {
++  display: flex;
++  justify-content: space-between;
++  font-size: 6px;
++  letter-spacing: 1px
++}
++.sample-photo {
++  height: 150px;
++  margin: 25px 0 18px;
++  position: relative;
++  overflow: hidden;
++  background: linear-gradient(145deg, #d59b7b 0 37%, #efdfcc 38% 65%, #748a7b 66%)
++}
++.sample-photo:before, .sample-photo:after, .sample-photo i {
++  content: "";
++  position: absolute;
++  width: 2px;
++  height: 100px;
++  left: 55px;
++  bottom: -30px;
++  background: #38574a;
++  transform: rotate(-20deg)
++}
++.sample-photo:after {
++  left: 95px;
++  height: 80px;
++  transform: rotate(14deg)
++}
++.sample-photo i {
++  left: 135px;
++  height: 90px;
++  transform: rotate(-4deg)
++}
++.page-main h3 {
++  margin: 8px 0
++}
++.page-right {
++  right: -30px;
++  top: 125px;
++  transform: rotate(10deg);
++  color: white;
++  background: var(--forest)
++}
++.page-right h3 {
++  margin-top: 70px;
++  font-size: 29px
++}
++.page-right p {
++  color: #b9c5bf;
++  font-size: 9px;
++  line-height: 1.6
++}
++.mini-checks {
++  margin-top: 25px;
++  font-size: 8px;
++  line-height: 2.2
++}
++.preview-note {
++  position: absolute;
++  left: 25px;
++  top: 25px;
++  color: var(--forest);
++  font-family: Georgia;
++  font-size: 28px;
++  font-style: italic;
++  line-height: .75
++}
++.preview-note span {
++  font-family: DM Sans;
++  font-size: 6px;
++  font-style: normal;
++  letter-spacing: 2px
++}
++.included-copy .lead {
++  margin: 25px 0;
++  color: var(--muted);
++  font-size: 14px;
++  line-height: 1.7
++}
++.included-copy ul {
++  margin: 30px 0;
++  padding: 0;
++  border-top: 1px solid var(--line);
++  list-style: none
++}
++.included-copy li {
++  min-height: 73px;
++  display: flex;
++  align-items: center;
++  border-bottom: 1px solid var(--line)
++}
++.included-copy li > span {
++  width: 42px;
++  color: var(--clay);
++  font-size: 9px
++}
++.included-copy li p {
++  display: flex;
++  flex: 1;
++  flex-direction: column;
++  margin: 0
++}
++.included-copy li strong {
++  font-size: 12px
++}
++.included-copy li small {
++  margin-top: 4px;
++  color: #87908b;
++  font-size: 9px
++}
++.included-copy li b {
++  color: #a4aaa6;
++  font-size: 16px;
++  font-weight: 400
++}
++.format-note {
++  display: flex;
++  gap: 8px
++}
++.format-note span {
++  padding: 7px 10px;
++  border: 1px solid #cfd2cb;
++  color: #6e7a74;
++  font-size: 7px;
++  font-weight: 700;
++  letter-spacing: 1px
++}
++.how-it-works {
++  padding: 115px max(40px, calc((100vw-1240px) / 2));
++  background: #e9e4da
++}
++.section-heading.centered {
++  display: block;
++  text-align: center
++}
++.section-heading.centered.eyebrow {
++  justify-content: center
++}
++.steps-grid {
++  display: grid;
++  grid-template-columns: repeat(3, 1fr);
++  margin-top: 65px
++}
++.steps-grid article {
++  display: flex;
++  gap: 23px;
++  padding: 0 40px;
++  border-right: 1px solid #cac9c1
++}
++.steps-grid article:last-child {
++  border: 0
++}
++.steps-grid b {
++  min-width: 41px;
++  height: 41px;
++  border-radius: 50%;
++  display: grid;
++  place-items: center;
++  color: #fff;
++  background: var(--clay);
++  font-family: Georgia;
++  font-size: 15px
++}
++.steps-grid h3 {
++  margin: 1px 0 9px;
++  font-family: Manrope;
++  font-size: 15px
++}
++.steps-grid p {
++  margin: 0;
++  color: #738078;
++  font-size: 11px;
++  line-height: 1.7
++}
++.testimonial {
++  padding: 110px 25px;
++  color: #fff;
++  background: var(--forest);
++  text-align: center
++}
++.quote-mark {
++  color: #e4aa95;
++  font-family: Georgia;
++  font-size: 60px;
++  line-height: .6
++}
++.testimonial blockquote {
++  max-width: 800px;
++  margin: 22px auto;
++  font-family: Georgia, serif;
++  font-size: clamp(28px, 3vw, 42px);
++  font-style: italic;
++  line-height: 1.25
++}
++.testimonial p {
++  color: #adbbb4;
++  font-size: 11px
++}
++.stars {
++  margin-top: 22px;
++  color: #e4aa95;
++  font-size: 10px;
++  letter-spacing: 4px
++}
++.faq {
++  max-width: 1100px;
++  margin: auto;
++  padding: 125px 25px;
++  display: grid;
++  grid-template-columns: .75fr 1.25fr;
++  gap: 100px
++}
++.faq-intro {
++  max-width: 270px;
++  color: var(--muted);
++  font-size: 12px;
++  line-height: 1.7
++}
++.faq-list {
++  border-top: 1px solid var(--line)
++}
++details {
++  border-bottom: 1px solid var(--line)
++}
++summary {
++  padding: 23px 0;
++  display: flex;
++  justify-content: space-between;
++  cursor: pointer;
++  font-size: 13px;
++  font-weight: 600;
++  list-style: none
++}
++summary:: - webkit-details-marker {
++  display: none
++}
++summary span {
++  font-size: 17px;
++  font-weight: 400
++}
++details[open] summary span {
++  transform: rotate(45deg)
++}
++details p {
++  margin: -5px 35px 22px 0;
++  color: var(--muted);
++  font-size: 11px;
++  line-height: 1.75
++}
++.final-cta {
++  padding: 95px max(40px, calc((100vw-1140px) / 2));
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  gap: 70px;
++  color: #fff;
++  background: var(--clay)
++}
++.final-cta .eyebrow {
++  color: #fff
++}
++.final-cta h2 em {
++  color: #28493f
++}
++.final-cta .cta-copy > p:last-child {
++  color: #f3ded7;
++  font-size: 12px
++}
++.cta-purchase {
++  min-width: 310px;
++  display: flex;
++  flex-direction: column;
++  align-items: center
++}
++.cta-price {
++  width: 100%;
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  margin-bottom: 10px;
++  color: #fff
++}
++.cta-price span {
++  font-size: 8px;
++  letter-spacing: 1.5px
++}
++.cta-price strong {
++  font-family: Manrope;
++  font-size: 24px
++}
++.button-light {
++  width: 100%;
++  color: var(--ink);
++  background: var(--paper)
++}
++.button-light:hover {
++  background: #f2eadf
++}
++.cta-purchase small {
++  margin-top: 11px;
++  color: #f1d5cc;
++  font-size: 8px
++}
++footer {
++  max-width: 1240px;
++  margin: auto;
++  padding: 38px 0;
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  color: #78827d;
++  font-size: 9px
++}
++footer.brand {
++  color: var(--ink);
++  font-size: 10px
++}
++footer.brand-mark {
++  width: 25px;
++  height: 25px
++}
++@media(max-width: 1000px) {
++  .site-header {
++    padding: 0 25px
++  }
++  .section-shell {
++    padding-left: 25px;
++    padding-right: 25px
++  }
++  .hero {
++    grid-template-columns: 1fr;
++    gap: 55px
++  }
++  .hero-copy {
++    max-width: 700px
++  }
++  .hero-visual {
++    width: min(700px, 100%);
++    margin: auto
++  }
++  .included {
++    margin: 0 25px;
++    grid-template-columns: 1fr;
++    gap: 70px
++  }
++  .pages-preview {
++    max-width: 680px;
++    width: 100%;
++    margin: auto
++  }
++  .included-copy {
++    max-width: 680px;
++    margin: auto
++  }
++  .benefits {
++    padding-left: 25px;
++    padding-right: 25px
++  }
++  .trust-strip {
++    padding-left: 25px;
++    padding-right: 25px
++  }
++  .trust-strip > div {
++    padding: 0 10px
++  }
++  .steps-grid article {
++    padding: 0 20px
++  }
++  .faq {
++    gap: 50px
++  }
++  .final-cta {
++    padding-left: 45px;
++    padding-right: 45px
++  }
++  footer {
++    padding-left: 25px;
++    padding-right: 25px
++  }
++}
++@media(max-width: 700px) {
++  .announcement {
++    height: 29px;
++    gap: 8px;
++    font-size: 7px
++  }
++  .site-header {
++    height: 67px;
++    padding: 0 18px
++  }
++  .site-header nav {
++    display: none
++  }
++  .header-cta {
++    padding: 10px 12px
++  }
++  .brand {
++    font-size: 10px
++  }
++  .hero {
++    min-height: 0;
++    padding: 60px 18px 70px;
++    gap: 45px
++  }
++  h1 {
++    font-size: 45px
++  }
++  .hero-description {
++    font-size: 14px
++  }
++  .hero-actions {
++    align-items: flex-start;
++    flex-direction: column
++  }
++  .button-primary {
++    width: 100%
++  }
++  .hero-checks {
++    flex-direction: column;
++    gap: 10px
++  }
++  .hero-visual {
++    height: 415px
++  }
++  .visual-caption {
++    left: 18px;
++    top: 17px
++  }
++  .book {
++    width: 205px;
++    height: 300px;
++    padding: 20px
++  }
++  .book-back {
++    left: 5%;
++    top: 80px
++  }
++  .book-back div {
++    margin-top: 75px
++  }
++  .book-front {
++    right: 5%;
++    top: 55px
++  }
++  .cover-title {
++    margin-top: 40px
++  }
++  .cover-title strong {
++    font-size: 24px
++  }
++  .cover-art {
++    height: 75px;
++    margin: 24px-20px-20px
++  }
++  .edit-card {
++    right: 8px;
++    top: 20px
++  }
++  .rating-card {
++    left: 10px;
++    bottom: 18px
++  }
++  .trust-strip {
++    grid-template-columns: 1fr 1fr;
++    padding: 10px 14px
++  }
++  .trust-strip > div {
++    justify-content: flex-start;
++    padding: 15px 7px;
++    border-bottom: 1px solid rgba(255, 255, 255, .15)
++  }
++  .trust-strip > div:nth-child(2) {
++    border-right: 0
++  }
++  .trust-strip > div:nth-child(3) {
++    border-bottom: 0
++  }
++  .benefits {
++    padding: 85px 20px
++  }
++  .section-heading {
++    align-items: flex-start;
++    flex-direction: column;
++    gap: 22px
++  }
++  .benefit-grid {
++    grid-template-columns: 1fr;
++    gap: 13px;
++    margin-top: 45px
++  }
++  .benefit-grid article {
++    min-height: 245px
++  }
++  .benefit-grid article.featured {
++    transform: none
++  }
++  .included {
++    margin: 0 18px;
++    padding: 85px 0;
++    gap: 50px
++  }
++  .pages-preview {
++    height: 430px
++  }
++  .sample-page {
++    width: 175px;
++    height: 265px;
++    padding: 16px
++  }
++  .page-left {
++    left: 8px;
++    top: 115px
++  }
++  .page-main {
++    left: 25%;
++    top: 70px
++  }
++  .page-right {
++    right: -45px;
++    top: 100px
++  }
++  .sample-photo {
++    height: 105px;
++    margin: 18px 0 13px
++  }
++  .sample-page h3 {
++    font-size: 20px
++  }
++  .page-left h3 {
++    margin-top: 35px
++  }
++  .page-right h3 {
++    margin-top: 45px
++  }
++  .how-it-works {
++    padding: 85px 20px
++  }
++  .steps-grid {
++    grid-template-columns: 1fr;
++    gap: 0;
++    margin-top: 45px
++  }
++  .steps-grid article {
++    padding: 25px 0;
++    border-right: 0;
++    border-bottom: 1px solid #cac9c1
++  }
++  .testimonial {
++    padding: 80px 20px
++  }
++  .faq {
++    padding: 85px 20px;
++    grid-template-columns: 1fr;
++    gap: 40px
++  }
++  .faq-intro {
++    max-width: 380px
++  }
++  .final-cta {
++    padding: 75px 20px;
++    align-items: flex-start;
++    flex-direction: column;
++    gap: 40px
++  }
++  .cta-purchase {
++    width: 100%;
++    min-width: 0
++  }
++  footer {
++    padding: 30px 20px;
++    flex-direction: column;
++    gap: 14px;
++    text-align: center
++  }
++}
++@media(prefers-reduced-motion: reduce) {
++  html {
++    scroll-behavior: auto
++  }
++  *, *::before, *::after {
++    transition: none !important
++  }
++}
+' | git apply --3way)
